@@ -42,6 +42,8 @@ jobs:
         OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
         GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+      run:
+        cat /home/runner/.m2/settings.xm
         
     - name: Build with Maven
       run: mvn -B package gpg:sign --file pom.xml -P release
