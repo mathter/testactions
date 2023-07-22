@@ -44,4 +44,4 @@ jobs:
         OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
         GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-      run: mvn -B package gpg:sign --file pom.xml -P release
+      run: mvn release:prepare release:stage --file pom.xml -P release
