@@ -9,9 +9,9 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <scm>
-        <url>https://github.com/mathter/genthz</url>
-        <connection>scm:git:https://github.com/mathter/genthz.git</connection>
-        <developerConnection>scm:git:https://github.com/mathter/genthz.git</developerConnection>
+        <url>https://github.com/mathter/testactions</url>
+        <connection>scm:git:https://github.com/mathter/testactions.git</connection>
+        <developerConnection>scm:git:https://github.com/mathter/testactions.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
