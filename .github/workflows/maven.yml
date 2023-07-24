@@ -35,6 +35,9 @@ jobs:
         
     - name: Set up Apache Maven Central
       uses: actions/setup-java@v3
+      env:
+        OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+        OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
       with: # running setup-java again overwrites the settings.xml
         distribution: 'liberica'
         java-version: '8'
@@ -53,7 +56,5 @@ jobs:
         # git remote add origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
     - name: Build with Maven
       env:
-        OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-        OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
         GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       run: mvn -B clean package deploy:deploy --file pom.xml -P release
