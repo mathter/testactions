@@ -47,4 +47,5 @@ jobs:
       run: |
         git config --global user.email "mathter@mail.ru"
         git config --global user.name "auto.mathter"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
         mvn release:prepare release:stage --file pom.xml -P release
