@@ -44,4 +44,7 @@ jobs:
         OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
         GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-      run: mvn release:prepare release:stage --file pom.xml -P release
+      run:
+        git config --global user.email "mathter@mail.ru"
+        git config --global user.name "auto.mathter"
+        mvn release:prepare release:stage --file pom.xml -P release
