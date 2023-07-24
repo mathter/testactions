@@ -45,7 +45,7 @@ jobs:
         git config --global user.email "mathter@mail.ru"
         git config --global user.name "auto.mathter"
         git remote remove origin
-        git remote add origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+        # git remote add origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
     - name: Build with Maven
       env:
         OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
